@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Request - Congressional Office</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>🏛️ Congressional Office</h1>
+        <p>Meeting Request Form</p>
+    </header>
+
+    <div id="success-message" class="success-message" style="display: none;">
+        <h2>✅ Request Submitted Successfully!</h2>
+        <p>Your meeting request has been received. Reference ID: <strong id="request-id"></strong></p>
+        <p>You will receive a confirmation email shortly.</p>
+    </div>
+
+    <form id="meeting-form" class="meeting-form">
+        <section class="form-section">
+            <h2>Contact Information</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="organization">Organization *</label>
+                    <input type="text" id="organization" name="organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Your Title</label>
+                    <input type="text" id="title" name="title">
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Meeting Details</h2>
+
+            <div class="form-group">
+                <label for="purpose">Meeting Purpose *</label>
+                <textarea id="purpose" name="purpose" rows="3" required
+                          placeholder="Please describe the purpose of your meeting..."></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Date *</label>
+                    <input type="date" id="preferredDate" name="preferredDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="preferredTime">Preferred Time *</label>
+                    <select id="preferredTime" name="preferredTime" required>
+                        <option value="">Select time...</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="9:30 AM">9:30 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="10:30 AM">10:30 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="11:30 AM">11:30 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="1:30 PM">1:30 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="2:30 PM">2:30 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="3:30 PM">3:30 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="4:30 PM">4:30 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="duration">Duration (minutes) *</label>
+                    <select id="duration" name="duration" required>
+                        <option value="">Select duration...</option>
+                        <option value="15">15 minutes</option>
+                        <option value="30">30 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">1 hour</option>
+                        <option value="90">1.5 hours</option>
+                        <option value="120">2 hours</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="meetingType">Meeting Type *</label>
+                    <select id="meetingType" name="meetingType" required>
+                        <option value="">Select type...</option>
+                        <option value="in-person">In-Person</option>
+                        <option value="virtual">Virtual (Video Call)</option>
+                        <option value="phone">Phone Call</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="attendees">Number of Attendees *</label>
+                <select id="attendees" name="attendees" required>
+                    <option value="">Select number...</option>
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <option value="4">4 people</option>
+                    <option value="5">5 people</option>
+                    <option value="6">6+ people</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Additional Information</h2>
+
+            <div class="form-group">
+                <label for="accommodations">Special Accommodations</label>
+                <textarea id="accommodations" name="accommodations" rows="2"
+                          placeholder="Any accessibility needs, dietary restrictions, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="additionalInfo">Additional Information</label>
+                <textarea id="additionalInfo" name="additionalInfo" rows="3"
+                          placeholder="Any other relevant information about your request..."></textarea>
+            </div>
+        </section>
+
+        <div class="form-actions">
+            <button type="submit" id="submit-btn" class="submit-btn">
+                Submit Meeting Request
+            </button>
+        </div>
+    </form>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Congressional Office | <a href="/admin">Admin Portal</a></p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

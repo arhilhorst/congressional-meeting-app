@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Meeting Requests</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="admin-container">
+    <header class="admin-header">
+        <h1>📊 Meeting Requests Admin</h1>
+        <p>Manage incoming meeting requests</p>
+        <div style="margin-top: 10px;">
+            <button onclick="location.href='/'" class="btn">← Back to Form</button>
+            <button onclick="loadMeetings()" class="btn">🔄 Refresh</button>
+        </div>
+    </header>
+
+    <div id="meetings-container" class="meetings-grid">
+        <p>Loading meetings...</p>
+    </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
